@@ -10,7 +10,7 @@ import { PATH_PRODUTOS } from '../../../../config';
   styleUrls: ['./produtos-list.component.css']
 })
 export class ProdutosListComponent extends ListPage<Produto> implements OnInit {
-   
+
   constructor(private produtosService: ProdutosService) {
     super()
   }
@@ -18,12 +18,13 @@ export class ProdutosListComponent extends ListPage<Produto> implements OnInit {
   ngOnInit() {
     this.getList()
   }
-  
+
   getList() {
-    if (this.subscription) this.subscription.unsubscribe()  
+    if (this.subscription) this.subscription.unsubscribe()
     this.subscription = this.produtosService.getList(PATH_PRODUTOS)
                           .subscribe(resultado => {
-                              this.objetos = resultado                              
+                              this.objetos = resultado
+
                               this.fillTable()
                           })
   }
