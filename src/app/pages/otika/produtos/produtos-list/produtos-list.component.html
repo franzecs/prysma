@@ -1,19 +1,19 @@
-<div class="card"> 
+<div class="card">
   <div class="page-top shadow-sm">
     Produtos Cadastrados
     <a [routerLink]="['add']">
-      <button class=" btn btn-primary btn-xs fa fa-plus-circle pull-right" 
+      <button class=" btn btn-primary btn-xs fa fa-plus-circle pull-right"
         style="margin-top:2px;margin-right: 2px; padding: 2px;"></button>
-    </a> 
+    </a>
 
-    <input type="text" #f (keyup)="filter(f.value)" title="Pesquisa" class="search-bar pull-right" ikUpCase/>       
-     
+    <input type="text" #f (keyup)="filter(f.value)" title="Pesquisa" class="search-bar pull-right" ikUpCase/>
+
   </div>
   <div *ngIf="objetos === undefined" class="text-center">
     <loading-spinner></loading-spinner>
   </div>
   <div *ngIf="objetos !== undefined">
-  
+
   <div class="card-body">
     <table class="table table-striped table-bordered">
       <thead>
@@ -25,7 +25,7 @@
           <th></th>
         </tr>
       </thead>
-      <tbody>  
+      <tbody>
         <tr *ngFor="let produto of tableObj">
           <td class="text-center">{{produto.descricao}}</td>
           <td class="text-center">{{produto.valor}}</td>
@@ -33,19 +33,19 @@
           <td class="text-center">{{produto.empresa.nome}}</td>>
           <td class="text-center">
             <a [routerLink]="[produto.id,'edit']" class="componenteform">
-              <button class=" btn btn-primary fa fa-search sombra-btn" title="Detalhes" 
+              <button class=" btn btn-primary fa fa-search sombra-btn" title="Detalhes"
               data-toggle="tooltip" data-placement="bottom"></button>
             </a>
-            <button type="button" class="btn btn-danger fa fa-trash componenteform sombra-btn" 
+            <button type="button" class="btn btn-danger fa fa-trash componenteform sombra-btn"
               title="Deletar" data-placement="bottom" data-target="#modalUtil" (click)="openModal(produto.id, produto.descricao, 'o Produto')">
             </button>
           </td>
         </tr>
-      </tbody>  
+      </tbody>
     </table>
 
     <kz-paginacao
-      [qtdPorPagina]="2" 
+      [qtdPorPagina]="2"
       [totalRegistros]="objetos.length"
       [qtdAdjacentes]="3"
       (onPaginate)="page($event)">

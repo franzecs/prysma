@@ -1,6 +1,6 @@
-import { Empresa } from "./empresa.model";
+import { Empresa } from './empresa.model';
 
-export class Produto{
+export class Produto {
     constructor(
         public id: string,
         public descricao: string,
@@ -8,6 +8,5 @@ export class Produto{
         public estoque: number,
         public valor: number,
         public empresa: Empresa
-    ){}
-    
+    ) {}
 }

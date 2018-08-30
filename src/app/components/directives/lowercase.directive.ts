@@ -1,18 +1,19 @@
-import {Directive, ElementRef, HostListener, Renderer} from '@angular/core'
+import {Directive, ElementRef, HostListener, Renderer} from '@angular/core';
 
 @Directive({
-    selector:'[ikLoCase]'
+    // tslint:disable-next-line:directive-selector
+    selector: '[ikLoCase]'
 })
-export class LowerDirective{
-    
-    public valor: string
+export class LowerDirective {
+
+    public valor: string;
 
     constructor(
         private el: ElementRef,
-        private render: Renderer){}
+        private render: Renderer) {}
 
-    @HostListener('keyup', ['$event']) onKeyup($event: any) { 
-        this.valor = $event.target.value.toLowerCase() 
-        this.render.setElementProperty(this.el.nativeElement,'value',this.valor)
+    @HostListener('keyup', ['$event']) onKeyup($event: any) {
+        this.valor = $event.target.value.toLowerCase();
+        this.render.setElementProperty(this.el.nativeElement, 'value', this.valor);
     }
 }

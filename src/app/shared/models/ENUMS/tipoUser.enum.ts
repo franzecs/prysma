@@ -1,5 +1,5 @@
-export enum TipoUser{
-    ADMINISTRADOR = "ADMINISTRADOR",
-    VENDEDOR = "VENDEDOR",
-    CLIENTE = "CLIENTE"
+export enum TipoUser {
+    ADMINISTRADOR = 'ADMINISTRADOR',
+    VENDEDOR = 'VENDEDOR',
+    CLIENTE = 'CLIENTE'
 }

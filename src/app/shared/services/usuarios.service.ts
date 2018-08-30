@@ -13,18 +13,18 @@ export class UsuariosService extends BasicService<Usuario> {
   constructor(
     private auth: AuthService,
     private db: AngularFirestore) {
-    super(db)
+    super(db);
   }
 
-  create(_path,usuario: Usuario): Promise<any> {
+  create(_path, usuario: Usuario): Promise<any> {
     return this.auth.createUser(usuario)
       .then(() => {
-        delete usuario.senha
-        this.db.collection(`${_path}`).doc(btoa(usuario.email)).set({ ...usuario })
-      })
+        delete usuario.senha;
+        this.db.collection(`${_path}`).doc(btoa(usuario.email)).set({ ...usuario });
+      });
   }
 
   resetPassword(email) {
-    this.auth.ResetPassword(email)
+    this.auth.ResetPassword(email);
   }
 }

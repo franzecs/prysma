@@ -8,19 +8,18 @@ import { UsuariosListComponent } from './usuarios/usuarios-list/usuarios-list.co
 import { UsuariosCreateComponent } from './usuarios/usuarios-create/usuarios-create.component';
 
 const rootUserRoutes = [
-    { path:'', component: RootUserComponent,
-        children:[
-            { path:'empresas', component: EmpresasListComponent },
-            { path:'empresas/add', component: EmpresasCreateComponent },
-            { path:'empresas/:id/edit', component: EmpresasEditComponent},
-            { path:'usuarios', component: UsuariosListComponent },
-            { path:'usuarios/:id/add', component: UsuariosCreateComponent },
-            { path:'usuarios/:id/edit', component: UsuariosCreateComponent },
+    { path: '', component: RootUserComponent,
+        children: [
+            { path: 'empresas', component: EmpresasListComponent },
+            { path: 'empresas/add', component: EmpresasCreateComponent },
+            { path: 'empresas/:id/edit', component: EmpresasEditComponent},
+            { path: 'usuarios', component: UsuariosListComponent },
+            { path: 'usuarios/:id/add', component: UsuariosCreateComponent },
+            { path: 'usuarios/:id/edit', component: UsuariosCreateComponent },
         ]
     },
 ];
 
- 
 @NgModule({
     imports: [RouterModule.forChild(rootUserRoutes)],
     exports: [RouterModule]

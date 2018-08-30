@@ -1,4 +1,4 @@
-export class Endereco{
+export class Endereco {
     constructor(
        public cep: String,
        public logradouro: String,
@@ -7,5 +7,5 @@ export class Endereco{
        public cidade: String,
        public estado: String,
        public numero: String
-    ){}
+    ) {}
 }

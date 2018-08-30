@@ -1,3 +1,3 @@
-export interface IFormDeactive{
-    authChangeRouter()
+export interface IFormDeactive {
+    authChangeRouter();
 }

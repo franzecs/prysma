@@ -6,30 +6,30 @@ import { AuthService } from '../../../config/auth.service';
   selector: 'app-topo',
   templateUrl: './topo.component.html',
   styleUrls: ['./topo.component.css'],
-  providers:[ ]
+  providers: [ ]
 })
 export class TopoComponent implements OnInit {
 
-  showMenu: boolean = false
+  showMenu = false;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
-  public sair(){
-    this.authService.signOut()
+  public sair() {
+    this.authService.signOut();
   }
 
-  controlNav(){
-    if(this.showMenu === false){
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
-      this.showMenu = true
-    }else{
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("main").style.marginLeft= "0";
-      this.showMenu = false
+  controlNav() {
+    if (this.showMenu === false) {
+      document.getElementById('mySidenav').style.width = '250px';
+      document.getElementById('main').style.marginLeft = '250px';
+      this.showMenu = true;
+    } else {
+      document.getElementById('mySidenav').style.width = '0';
+      document.getElementById('main').style.marginLeft = '0';
+      this.showMenu = false;
     }
   }
 }

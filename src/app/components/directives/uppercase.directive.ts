@@ -1,18 +1,19 @@
-import {Directive, ElementRef, HostListener, Renderer} from '@angular/core'
+import {Directive, ElementRef, HostListener, Renderer} from '@angular/core';
 
 @Directive({
-    selector:'[ikUpCase]'
+    // tslint:disable-next-line:directive-selector
+    selector: '[ikUpCase]'
 })
-export class UpperDirective{
+export class UpperDirective {
 
-    public valor
+    public valor;
 
     constructor(
         private el: ElementRef,
-        private render: Renderer){}
+        private render: Renderer) {}
 
-    @HostListener('keyup', ['$event']) onKeyup($event: any) { 
-        this.valor = $event.target.value.toUpperCase() 
-        this.render.setElementProperty(this.el.nativeElement,'value',this.valor)
+    @HostListener('keyup', ['$event']) onKeyup($event: any) {
+        this.valor = $event.target.value.toUpperCase();
+        this.render.setElementProperty(this.el.nativeElement, 'value', this.valor);
     }
 }

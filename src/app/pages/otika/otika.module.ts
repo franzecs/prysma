@@ -20,13 +20,13 @@ import { ClientesListComponent } from './clientes/clientes-list/clientes-list.co
     OtikaRoutingModule
   ],
   declarations: [
-    OtikaComponent, 
-    ProdutosListComponent, 
+    OtikaComponent,
+    ProdutosListComponent,
     ProdutosCreateUpdateComponent,
-    PedidosListComponent, 
-    PedidosCreateUpdateComponent, 
+    PedidosListComponent,
+    PedidosCreateUpdateComponent,
     ClientesListComponent,
     ClientesCreateUpdateComponent],
   exports: [OtikaComponent]
 })
-export class OtikaModule { }
+export class OtikaModule {}

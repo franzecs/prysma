@@ -1,5 +1,5 @@
-import { Usuario } from "./usuario.model";
-import { Endereco } from "./endereco.model";
+import { Usuario } from './usuario.model';
+import { Endereco } from './endereco.model';
 
 export class Responsavel extends Usuario {
     constructor(
@@ -13,8 +13,7 @@ export class Responsavel extends Usuario {
         public perfis: string[],
         public isAtivo: boolean,
         public url_perfil?: string
-    ){ 
-        super(id,nome,senha,email,perfis, isAtivo)
+    ) {
+        super(id, nome, senha, email, perfis, isAtivo);
     }
-    
 }

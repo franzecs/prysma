@@ -14,7 +14,7 @@ import { ComponentsModule } from '../../components/components.module';
     ComponentsModule
   ],
   providers: [],
-  declarations: [TopoComponent,RodapeComponent,HomeComponent],
-  exports: [TopoComponent,RodapeComponent,HomeComponent]
+  declarations: [TopoComponent, RodapeComponent, HomeComponent],
+  exports: [TopoComponent, RodapeComponent, HomeComponent]
 })
 export class LayoutModule { }

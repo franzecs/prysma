@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase'
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CloudMessageService {
 
-  mensageiro = firebase.messaging()
+  mensageiro = firebase.messaging();
   constructor() { }
 
   teste() {

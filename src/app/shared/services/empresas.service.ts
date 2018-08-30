@@ -4,11 +4,10 @@ import { Empresa } from '../models';
 import { BasicService } from '../services/basic.service';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class EmpresasService extends BasicService<Empresa> {
-  
   constructor(private db: AngularFirestore) {
-    super(db)
-   }
+    super(db);
+  }
 }

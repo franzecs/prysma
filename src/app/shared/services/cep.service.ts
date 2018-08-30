@@ -41,10 +41,10 @@ export class ConsultaCepService {
     );
   }
 
-  getCidadeNome(cidade){
+  getCidadeNome(cidade) {
     return this.http.get<Cidade[]>('assets/dados/cidades.json')
     .pipe(
-      map((cidades: Cidade[]) => cidades.filter(c => c.nome == cidade))
-    )
+      map((cidades: Cidade[]) => cidades.filter(c => c.nome === cidade))
+    );
   }
 }

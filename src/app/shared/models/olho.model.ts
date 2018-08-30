@@ -1,4 +1,4 @@
-export class Olho{
+export class Olho {
     constructor(
         public id: string,
         public lado: string,
@@ -8,6 +8,5 @@ export class Olho{
         public adicao: string,
         public dnp: string,
         public alt: string,
-    ){}
-    
+    ) {}
 }

@@ -1,6 +1,7 @@
-import { Endereco } from "./endereco.model";
+import { Endereco } from './endereco.model';
+import { Empresa } from './empresa.model';
 
-export class Usuario{
+export class Usuario {
     constructor(
         public id: string,
         public nome: string,
@@ -9,7 +10,7 @@ export class Usuario{
         public perfis: string[],
         public isAtivo: boolean,
         public endereco?: Endereco,
-        public empresa?: string,
+        public empresa?: Empresa,
         public url_perfil?: string,
-    ){}
+    ) {}
 }

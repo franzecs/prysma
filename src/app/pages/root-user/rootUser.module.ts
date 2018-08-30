@@ -18,7 +18,8 @@ import { ReactiveFormsModule } from '@Angular/forms';
     ReactiveFormsModule,
     RootUserRoutingModule
   ],
-  declarations: [RootUserComponent, EmpresasCreateComponent, EmpresasListComponent, EmpresasEditComponent, UsuariosListComponent, UsuariosCreateComponent],
+  declarations: [RootUserComponent, EmpresasCreateComponent, EmpresasListComponent,
+                 EmpresasEditComponent, UsuariosListComponent, UsuariosCreateComponent],
   exports: [RootUserComponent]
 })
 export class RootUserModule { }

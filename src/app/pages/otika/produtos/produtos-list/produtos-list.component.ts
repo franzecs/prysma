@@ -12,27 +12,32 @@ import { PATH_PRODUTOS } from '../../../../config';
 export class ProdutosListComponent extends ListPage<Produto> implements OnInit {
 
   constructor(private produtosService: ProdutosService) {
-    super()
+    super();
   }
 
   ngOnInit() {
-    this.getList()
+    this.getList();
   }
 
   getList() {
-    if (this.subscription) this.subscription.unsubscribe()
+
+    if (this.subscription) { this.subscription.unsubscribe(); }
     this.subscription = this.produtosService.getList(PATH_PRODUTOS)
                           .subscribe(resultado => {
-                              this.objetos = resultado
+                              this.objetos = resultado;
 
-                              this.fillTable()
-                          })
+                              this.fillTable();
+                          });
   }
 
-  deletar(evento){
-    if(evento === true){
-        this.produtosService.delete(PATH_PRODUTOS, this.idObj)
-        this.getList()
+  deletar(evento) {
+    if (evento === true) {
+        this.produtosService.delete(PATH_PRODUTOS, this.idObj);
+        this.getList();
     }
+  }
+
+  filter() {
+
   }
 }

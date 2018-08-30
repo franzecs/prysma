@@ -13,10 +13,10 @@ import { ModalMessage, MsgType } from '../../../../components';
 })
 export class EmpresasCreateComponent implements OnInit {
 
-  @ViewChild(ModalMessage) modalMsg: ModalMessage
-  public formulario: FormGroup
-  private empresa: Empresa
-  
+  @ViewChild(ModalMessage) modalMsg: ModalMessage;
+  public formulario: FormGroup;
+  private empresa: Empresa;
+
   constructor(
     private formBuilder: FormBuilder,
     private empresasService: EmpresasService,
@@ -30,25 +30,25 @@ export class EmpresasCreateComponent implements OnInit {
       endereco: [null, [Validators.required, Validators.minLength(3)]],
       telefone: [null, [, Validators.required]],
       email: [null, [Validators.required, Validators.email]],
-      tipo:["Matriz", [Validators.required]],
+      tipo: ['Matriz', [Validators.required]],
       matriz: [null],
-      url_logo: [""],
-    })
-    
+      url_logo: [''],
+    });
+
   }
 
-  onSubmite(){
-    this.empresa = this.formulario.value
-    this.save(this.empresa)
+  onSubmite() {
+    this.empresa = this.formulario.value;
+    this.save(this.empresa);
   }
 
-  save(empresa: Empresa):void{
-     this.empresasService.create("/empresas", empresa)
-    .then(()=>{this.openModal("Cadastrado realizado com sucesso!!", MsgType.SUCCESS)})
-    .catch((error: Error)=>{this.openModal(`Falha ao realizar o cadastro!! (${error.message})`, MsgType.ERROR)})
+  save(empresa: Empresa): void {
+     this.empresasService.create('/empresas', empresa)
+    .then(() => {this.openModal('Cadastrado realizado com sucesso!!', MsgType.SUCCESS); })
+    .catch((error: Error) => {this.openModal(`Falha ao realizar o cadastro!! (${error.message})`, MsgType.ERROR); });
   }
 
-  openModal(msg, type){
-    this.modalMsg.showMessage(msg,type)
+  openModal(msg, type) {
+    this.modalMsg.showMessage(msg, type);
   }
 }

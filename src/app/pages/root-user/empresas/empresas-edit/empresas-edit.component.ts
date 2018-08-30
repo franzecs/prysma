@@ -14,23 +14,23 @@ import { PATH_EMPRESA } from '../../../../config';
 })
 export class EmpresasEditComponent implements OnInit {
 
-  @ViewChild(ModalMessage) modalMsg: ModalMessage
-  public empresa: Empresa
-  public id:string
-  public basePath = PATH_EMPRESA
-  public formulario: FormGroup
-  
+  @ViewChild(ModalMessage) modalMsg: ModalMessage;
+  public empresa: Empresa;
+  public id: string;
+  public basePath = PATH_EMPRESA;
+  public formulario: FormGroup;
+
   constructor(
     public empresasService: EmpresasService,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,) { }
+    private route: ActivatedRoute, ) { }
 
   ngOnInit() {
-    this.route.params.subscribe((parametros: Params)=>{
+    this.route.params.subscribe((parametros: Params) => {
       this.empresasService.findId(PATH_EMPRESA, parametros['id'])
-        .subscribe((objeto)=>{
-          this.empresa = objeto
-              
+        .subscribe((objeto) => {
+          this.empresa = objeto;
+
           this.formulario = this.formBuilder.group({
             id: [this.empresa.id],
             nome: [this.empresa.nome, [Validators.required]],
@@ -38,35 +38,35 @@ export class EmpresasEditComponent implements OnInit {
             endereco: [this.empresa.cnpj, [Validators.required]],
             telefone: [this.empresa.telefone],
             email: [this.empresa.email, [Validators.required, Validators.email]],
-            tipo:[this.empresa.tipo, [Validators.required]],
+            tipo: [this.empresa.tipo, [Validators.required]],
             matriz: [this.empresa.matriz],
             url_logo: [this.empresa.url_logo],
-          })
-          this.id = this.formulario.value.id
-        })
-    })
+          });
+          this.id = this.formulario.value.id;
+        });
+    });
   }
 
-  preparaObjeto(){
-    this.empresa = this.formulario.value 
-    this.update(this.empresa)
+  preparaObjeto() {
+    this.empresa = this.formulario.value;
+    this.update(this.empresa);
   }
- 
-  update(empresa: Empresa){
+
+  update(empresa: Empresa) {
     this.empresasService.update(PATH_EMPRESA, empresa.id, empresa)
-    .then(()=>{this.openModal("Dados editados com sucesso!!", MsgType.SUCCESS)})
-    .catch(()=>{this.openModal("Falha ao editar!!", MsgType.ERROR)})
+    .then(() => {this.openModal('Dados editados com sucesso!!', MsgType.SUCCESS); })
+    .catch(() => {this.openModal('Falha ao editar!!', MsgType.ERROR); });
   }
 
-  openModal(msg, type){
-    this.modalMsg.showMessage(msg,type)
+  openModal(msg, type) {
+    this.modalMsg.showMessage(msg, type);
   }
 
-  receiveUrl(evento){
-   this.empresasService.update(PATH_EMPRESA,this.id, {url_logo:evento})
+  receiveUrl(evento) {
+   this.empresasService.update(PATH_EMPRESA, this.id, {url_logo: evento});
   }
 
-  form(){
-    console.log(this.formulario)
+  form() {
+    console.log(this.formulario);
   }
 }

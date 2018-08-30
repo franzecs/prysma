@@ -1,17 +1,17 @@
-import { ViewChild } from "@angular/core";
-import { ModalMessage, MsgType } from "../../components";
+import { ViewChild } from '@angular/core';
+import { ModalMessage, MsgType } from '../../components';
 
 export abstract class ListPage<T> {
 
-  @ViewChild(ModalMessage) modalMsg: ModalMessage
-  objetos: T[]
+  @ViewChild(ModalMessage) modalMsg: ModalMessage;
+  objetos: T[];
   subscription: any;
-  idObj: string
+  idObj: string;
 
-  tableObj: T[]
-  pagina: number = 0;
-  qtdPorPagina: number = 3;
-  totalReg: number = 0
+  tableObj: T[];
+  pagina = 0;
+  qtdPorPagina = 3;
+  totalReg = 0;
 
   constructor() { }
 
@@ -31,7 +31,7 @@ export abstract class ListPage<T> {
   }
 
   openModal(idOBJ, sigla, objeto) {
-    this.idObj = idOBJ
-    this.modalMsg.showMessage(`Deseja realmente exluir ${objeto}: ` + sigla, MsgType.DELETE)
+    this.idObj = idOBJ;
+    this.modalMsg.showMessage(`Deseja realmente exluir ${objeto}: ` + sigla, MsgType.DELETE);
   }
 }

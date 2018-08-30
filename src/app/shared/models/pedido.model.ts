@@ -1,10 +1,10 @@
-import { Cliente } from "./cliente.model";
-import { Olho } from "./olho.model";
-import { Item } from "./item.model";
+import { Cliente } from './cliente.model';
+import { Olho } from './olho.model';
+import { Item } from './item.model';
 
-export class Pedido{
+export class Pedido {
 
-    vrTotalPedido: number
+    vrTotalPedido: number;
 
     constructor(
         public id: string,
@@ -18,12 +18,12 @@ export class Pedido{
         public documentos: string[],
         public itens: Item[],
         public observacao?: string
-    ){}
+    ) {}
 
-    totalPedido(): number{
-        for(let i of this.itens){
-            this.vrTotalPedido += i.vrTotal
+    totalPedido(): number {
+        for (const i of this.itens) {
+            this.vrTotalPedido += i.vrTotal;
         }
-        return this.vrTotalPedido
+        return this.vrTotalPedido;
     }
 }
