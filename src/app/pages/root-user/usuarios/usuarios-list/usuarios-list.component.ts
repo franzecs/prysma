@@ -4,6 +4,7 @@ import { PATH_USUARIO } from '../../../../config';
 import { Usuario } from '../../../../shared/models';
 import { UsuariosService } from '../../../../shared/services';
 import { ListPage } from '../../../../shared/abstract/list.component';
+import { UsuarioDTO } from '../../../../shared/dto/usuario.dto';
 
 @Component({
   selector: 'app-usuarios-list',
@@ -11,6 +12,8 @@ import { ListPage } from '../../../../shared/abstract/list.component';
   styleUrls: ['./usuarios-list.component.css']
 })
 export class UsuariosListComponent extends ListPage<Usuario> implements OnInit {
+
+  lista: UsuarioDTO[];
 
   constructor(private usuariosService: UsuariosService) {
     super();

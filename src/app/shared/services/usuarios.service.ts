@@ -4,6 +4,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Usuario } from '../models';
 import { BasicService } from '../services/basic.service';
 import { AuthService } from '../../config/auth.service';
+import { UsuarioDTO } from '../dto/usuario.dto';
 
 @Injectable({
   providedIn: 'root'

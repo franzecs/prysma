@@ -1,4 +1,4 @@
-import { Empresa } from './empresa.model';
+import { EmpresaDTO } from '../dto/empresa.dto';
 
 export class Produto {
     constructor(
@@ -7,6 +7,6 @@ export class Produto {
         public fabricante: string,
         public estoque: number,
         public valor: number,
-        public empresa: Empresa
+        public empresa: EmpresaDTO
     ) {}
 }
